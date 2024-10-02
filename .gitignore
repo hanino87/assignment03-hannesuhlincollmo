@@ -5,3 +5,6 @@ node_modules/
 /playwright/.cache/
 .env
 /tests-examples/
+Api_endpoints.http
+rawtest.spec.ts
+fetch.spec.ts
