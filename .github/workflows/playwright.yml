@@ -36,6 +36,9 @@ jobs:
 
     # run playwright tests
     - name: run tests
+      env: 
+        USERNAME: ${{secrets.USERNAME}}
+        PASSWORD: ${{secrets.PASSWORD}}
       run: npm run run-tests
 
     # save test-results 
