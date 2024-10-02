@@ -24,8 +24,6 @@ export class APIHELPERS {
     // }
 
     async LoginBackend(request: APIRequestContext) {
-        console.log("Username:", process.env.USERNAME); // Should log the username
-        console.log("Password:", process.env.PASSWORD); 
         const response = await request.post(`${this.URL_LOGIN}`, {
             headers: {
                 'Content-Type': 'application/json',
@@ -37,7 +35,6 @@ export class APIHELPERS {
         })
         const jsonResponse = await response.json(); // Parse the JSON response
         const accessToken = jsonResponse.token;
-        console.log(accessToken)
         this.authorization = { "username": `${process.env.USERNAME}`, "token": accessToken }
         return this.authorization;
     }

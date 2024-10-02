@@ -13,7 +13,6 @@ test.describe('Hannes Testsuite assignment 03 Backend', () => {
     // Make the login request
     const responselogin = await apihelpers.LoginBackend(request);
     authorization = responselogin; // Store the authorization in variabel response
-    console.log(authorization)
   });
 
   test('testcase 01 get right response all customers and verify the testdata is in there', async ({ request }) => {
