@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Hannes Pipline
 # trigger jobs by push things to branchens main or gh-actions
 on:
   push:
@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main, gh-actions ]
 jobs:
-  test-e2:
+  tests:
     # runs on this container 
     runs-on: ubuntu-latest
     steps:
@@ -49,10 +49,5 @@ jobs:
         path: ./playwright-report
 
 
-    # - uses: actions/upload-artifact@v
   
-    #   with:
-    #     name: playwright-report
-    #     path: playwright-report/
-    #     retention-days: 30
 
