@@ -4,7 +4,8 @@ export const Fakerdatauppdatelient = () => {
     return {
         "name": faker.person.fullName(),
         "email": faker.internet.email(),
-        "telephone":faker.phone.number()
+        "telephone":faker.phone.number(),
+        "id": 1
     }
 }
 
