@@ -1,0 +1,53 @@
+name: Hannes Pipline
+# trigger jobs by push things to branchens main or gh-actions
+on:
+  push:
+    branches: [ main, gh-actions ]
+  pull_request:
+    branches: [ main, gh-actions ]
+jobs:
+  tests:
+    # runs on this container 
+    runs-on: ubuntu-latest
+    steps:
+    #checkout code
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    # install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # install playright
+    - name: Install Playwright 
+      run: npx playwright install
+
+    # Pull down docker image from dockerhub
+    - name: Pull docker image
+      run: docker pull rasilva1986/my-vue-app:v1 
+
+    # Run docer container
+    - name: Run docker container
+      run: docker run -d -p 3000:3000 rasilva1986/my-vue-app:v1
+
+    # wait for server to be okay
+    - name: Wait for server running
+      run: npx wait-on http://localhost:3000
+
+    # run playwright tests
+    - name: run tests
+      env: 
+        USERNAME: ${{secrets.USERNAME}}
+        PASSWORD: ${{secrets.PASSWORD}}
+      run: npm run run-tests
+
+    # save test-results 
+    - name: save testresults to artifacts 
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-test-results
+        path: ./playwright-report
+
+
+  
+

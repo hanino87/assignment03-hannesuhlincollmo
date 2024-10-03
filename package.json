@@ -1,0 +1,25 @@
+{
+  "name": "assignment03-hannesuhlincollmo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run-tests": "npx playwright test",
+    "run-ui-mode": "npx playwright test --ui",
+    "run-debug-mode": "npx playwright test --debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^9.0.3",
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^22.7.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "wait-on": "^8.0.1"
+  }
+}

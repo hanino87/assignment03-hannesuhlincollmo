@@ -1,0 +1,10 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+.env
+/tests-examples/
+Api_endpoints.http
+rawtest.spec.ts
+fetch.spec.ts
