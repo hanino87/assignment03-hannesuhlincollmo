@@ -86,6 +86,7 @@ test.describe('Hannes Testsuite assignment 03 Frontend', () => {
     await billcreatepage.Createbillwithoutanyvalue();
     await expect(page.locator('#app')).toContainText('Value must be a whole number');
     await expect(page.locator('#app')).not.toContainText('Thank you your bill has been saved to the system');
+    console.log("test is very good yes it is")
   });
 });
 
